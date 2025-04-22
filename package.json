@@ -1,0 +1,44 @@
+{
+  "name": "one-quiz-app",
+  "version": "1.0.0",
+  "description": "本地离线智能刷题系统",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --dir",
+    "dist": "electron-builder --dir --config.win.signAndEditExecutable=false"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.6.4"
+  },
+  "dependencies": {},
+  "build": {
+    "appId": "com.one.quiz",
+    "productName": "One刷题系统",
+    "directories": {
+      "output": "dist"
+    },
+    "electronDist": "electron-v28.3.3-win32-x64",
+    "files": [
+      "**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "js/",
+        "to": "js/",
+        "filter": ["**/*"]
+      }
+    ],
+    "win": {
+      "target": "portable",
+      "signAndEditExecutable": false
+    },
+    "portable": {
+      "artifactName": "One刷题系统.exe"
+    },
+    "asar": false
+  }
+}
